@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://smart_objects/3d_button/3DButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://smart_objects/moving_platform/resources/platforms/Platform.tres" type="ArrayMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.298039, 0.623529, 0.588235, 1 )
+roughness = 0.08
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 2, 0.312, 1.993 )
+
+[node name="platform_body" type="StaticBody" groups=["MovingPlatform"]]
+
+[node name="mesh" type="MeshInstance" parent="."]
+mesh = ExtResource( 2 )
+material/0 = SubResource( 2 )
+
+[node name="shape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.315, 0 )
+shape = SubResource( 1 )
+
+[node name="platform_button" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.173283, 1.52272, 2.11565 )

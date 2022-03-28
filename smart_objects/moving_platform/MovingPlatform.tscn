@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://smart_objects/moving_platform/scripts/MovingPlatformController.gd" type="Script" id=1]
+[ext_resource path="res://smart_objects/moving_platform/resources/animations/LinearMove.tres" type="Animation" id=2]
+
+[sub_resource type="Curve3D" id=1]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 0, 0 ),
+"tilts": PoolRealArray( 0, 0 )
+}
+
+[node name="MovingPlatform" type="Path"]
+curve = SubResource( 1 )
+script = ExtResource( 1 )
+movement_animation = ExtResource( 2 )
+platform_body = "res://smart_objects/moving_platform/resources/platforms/PlatformBody.tscn"
+
+[node name="path_follow" type="PathFollow" parent="." groups=["MovingPlatform"]]
+rotation_mode = 1
+cubic_interp = false
