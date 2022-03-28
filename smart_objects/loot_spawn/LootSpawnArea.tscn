@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://smart_objects/loot_spawn/resources/default_curve.tres" type="Curve3D" id=1]
+[ext_resource path="res://smart_objects/loot_spawn/scripts/LootSpawnArea.gd" type="Script" id=4]
+
+[node name="LootSpawnArea" type="Path"]
+curve = ExtResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="InstancePlaceholder" type="Node" parent="."]
