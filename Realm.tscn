@@ -2,7 +2,7 @@
 
 [ext_resource path="res://smart_objects/loot_spawn/LootSpawnArea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://smart_objects/portal/RealmPortal.tscn" type="PackedScene" id=2]
-[ext_resource path="res://custom_assets/environments/SpaceLobbyEnvironment.tres" type="Environment" id=3]
+[ext_resource path="res://custom_assets/environments/space_environment.tres" type="Environment" id=3]
 [ext_resource path="res://custom_assets/meshes/Lobby_001.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/RealmScene/scripts/RealmScene.gd" type="Script" id=7]
 [ext_resource path="res://addons/RealmScene/scripts/RealmBatcher.gd" type="Script" id=8]
