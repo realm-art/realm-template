@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://smart_objects/portal/scripts/RealmPortal.gd" type="Script" id=1]
+[ext_resource path="res://smart_objects/portal/resources/materials/portal.material" type="Material" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+resource_local_to_scene = true
+flags_transparent = true
+albedo_color = Color( 1, 1, 1, 0 )
+roughness = 0.3
+
+[node name="RealmPortal" type="StaticBody"]
+collision_layer = 33
+collision_mask = 33
+script = ExtResource( 1 )
+portal_mesh_path = "res://smart_objects/portal/resources/Adv_Portal.tscn"
+inactive_material = SubResource( 1 )
+active_material = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+
+[node name="SpawnPoint" type="Position3D" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0.2, 4 )
+
+[node name="QuestMarkerTarget" type="Position3D" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2.5, 0.15 )
