@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/RealmObjects/ObjectInfo.gd" type="Script" id=1]
+
+[node name="ObjectInfo" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 10
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_right = 1024.0
+margin_bottom = 20.0
+text = "Object Name"
+
+[node name="Description" type="Label" parent="."]
+margin_top = 30.0
+margin_right = 1024.0
+margin_bottom = 44.0
+text = "Description"
+valign = 1
+autowrap = true
+
+[node name="HSeparator" type="HSeparator" parent="."]
+margin_top = 54.0
+margin_right = 1024.0
+margin_bottom = 58.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
