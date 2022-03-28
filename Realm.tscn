@@ -1,0 +1,102 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://smart_objects/loot_spawn/LootSpawnArea.tscn" type="PackedScene" id=1]
+[ext_resource path="res://smart_objects/portal/RealmPortal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://custom_assets/environments/SpaceLobbyEnvironment.tres" type="Environment" id=3]
+[ext_resource path="res://custom_assets/meshes/Lobby_001.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/RealmScene/scripts/RealmScene.gd" type="Script" id=7]
+[ext_resource path="res://addons/RealmScene/scripts/RealmBatcher.gd" type="Script" id=8]
+[ext_resource path="res://addons/RealmScene/scripts/RealmLights.gd" type="Script" id=9]
+[ext_resource path="res://addons/RealmScene/scripts/RealmPortals.gd" type="Script" id=10]
+[ext_resource path="res://addons/RealmScene/scripts/RealmSmartObjects.gd" type="Script" id=11]
+[ext_resource path="res://addons/RealmScene/scripts/RealmEnvironment.gd" type="Script" id=12]
+[ext_resource path="res://addons/RealmScene/scripts/RealmNPCs.gd" type="Script" id=13]
+[ext_resource path="res://addons/RealmScene/scripts/RealmMisc.gd" type="Script" id=14]
+[ext_resource path="res://addons/RealmScene/scripts/RealmRespawnPoints.gd" type="Script" id=15]
+[ext_resource path="res://smart_objects/moving_platform/MovingPlatform.tscn" type="PackedScene" id=16]
+
+[sub_resource type="SpatialMaterial" id=1]
+resource_local_to_scene = true
+flags_transparent = true
+albedo_color = Color( 1, 1, 1, 0 )
+roughness = 0.3
+
+[sub_resource type="SpatialMaterial" id=2]
+resource_local_to_scene = true
+flags_transparent = true
+albedo_color = Color( 1, 1, 1, 0 )
+roughness = 0.3
+
+[sub_resource type="Curve3D" id=3]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25.8043, 11.4012, -9.64897 ),
+"tilts": PoolRealArray( 0, 0 )
+}
+
+[node name="RealmScene" type="Spatial"]
+script = ExtResource( 7 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 3 )
+script = ExtResource( 12 )
+
+[node name="StaticMeshes" type="BakedLightmap" parent="."]
+script = ExtResource( 8 )
+
+[node name="Lobby_001" parent="StaticMeshes" instance=ExtResource( 4 )]
+
+[node name="Lights" type="Spatial" parent="."]
+script = ExtResource( 9 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Lights"]
+transform = Transform( 0.473412, 0.670904, -0.570762, 0, 0.647974, 0.761663, 0.880841, -0.36058, 0.306758, 0, 34.4767, 0 )
+shadow_enabled = true
+shadow_color = Color( 0.588235, 0.588235, 0.588235, 1 )
+
+[node name="Portals" type="Spatial" parent="."]
+script = ExtResource( 10 )
+
+[node name="RealmPortal" parent="Portals" instance=ExtResource( 2 )]
+transform = Transform( -0.486579, 0, -0.873636, 0, 1, 0, 0.873636, 0, -0.486579, 63.2859, 0, -6.63632 )
+target_realm = "Metropolis"
+inactive_material = SubResource( 1 )
+
+[node name="RealmPortal2" parent="Portals" instance=ExtResource( 2 )]
+transform = Transform( 0.103452, 0, 0.994634, 0, 1, 0, -0.994634, 0, 0.103452, 17.6605, 1.97349, 1.45995 )
+target_realm = "Metropolis"
+portal_variation = 2
+inactive_material = SubResource( 2 )
+
+[node name="SmartObjects" type="Spatial" parent="."]
+script = ExtResource( 11 )
+
+[node name="LootSpawnArea" parent="SmartObjects" instance=ExtResource( 1 )]
+transform = Transform( 0.631123, 0, 0.775683, 0, 1, 0, -0.775683, 0, 0.631123, 44.9304, 1.42779, 7.35468 )
+rarities = 7
+
+[node name="MovingPlatform" parent="SmartObjects" instance=ExtResource( 16 )]
+transform = Transform( -0.979456, 0, 0.201659, 0, 1, 0, -0.201659, 0, -0.979456, 45.0599, -0.736963, -15.594 )
+curve = SubResource( 3 )
+movement_animation_speed = 0.2
+idle_time = 5.0
+
+[node name="NPCs" type="Spatial" parent="."]
+script = ExtResource( 13 )
+
+[node name="Misc" type="Spatial" parent="."]
+script = ExtResource( 14 )
+
+[node name="RespawnPoints" type="Spatial" parent="."]
+script = ExtResource( 15 )
+
+[node name="Position3D" type="Position3D" parent="RespawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.6284, 1.49223, 7.93725 )
+
+[node name="Position3D2" type="Position3D" parent="RespawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40.8618, 1.49223, -8.53936 )
+
+[node name="Position3D3" type="Position3D" parent="RespawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 61.4204, 0.665694, -11.8879 )
+
+[node name="Position3D4" type="Position3D" parent="RespawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.63701, 1.49223, 9.98431 )
