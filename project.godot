@@ -1,0 +1,110 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "SmartObject",
+"class": "LootSpawnArea",
+"language": "GDScript",
+"path": "res://smart_objects/loot_spawn/scripts/LootSpawnArea.gd"
+}, {
+"base": "SmartObject",
+"class": "MovingPlatform",
+"language": "GDScript",
+"path": "res://smart_objects/moving_platform/scripts/MovingPlatformController.gd"
+}, {
+"base": "BakedLightmap",
+"class": "RealmBatcher",
+"language": "GDScript",
+"path": "res://addons/RealmScene/scripts/RealmBatcher.gd"
+}, {
+"base": "WorldEnvironment",
+"class": "RealmEnvironment",
+"language": "GDScript",
+"path": "res://addons/RealmScene/scripts/RealmEnvironment.gd"
+}, {
+"base": "Spatial",
+"class": "RealmLights",
+"language": "GDScript",
+"path": "res://addons/RealmScene/scripts/RealmLights.gd"
+}, {
+"base": "Spatial",
+"class": "RealmMisc",
+"language": "GDScript",
+"path": "res://addons/RealmScene/scripts/RealmMisc.gd"
+}, {
+"base": "Spatial",
+"class": "RealmNPCs",
+"language": "GDScript",
+"path": "res://addons/RealmScene/scripts/RealmNPCs.gd"
+}, {
+"base": "SmartObject",
+"class": "RealmPortal",
+"language": "GDScript",
+"path": "res://smart_objects/portal/scripts/RealmPortal.gd"
+}, {
+"base": "Spatial",
+"class": "RealmPortals",
+"language": "GDScript",
+"path": "res://addons/RealmScene/scripts/RealmPortals.gd"
+}, {
+"base": "Spatial",
+"class": "RealmRespawnPoints",
+"language": "GDScript",
+"path": "res://addons/RealmScene/scripts/RealmRespawnPoints.gd"
+}, {
+"base": "Spatial",
+"class": "RealmScene",
+"language": "GDScript",
+"path": "res://addons/RealmScene/scripts/RealmScene.gd"
+}, {
+"base": "Spatial",
+"class": "RealmSmartObjects",
+"language": "GDScript",
+"path": "res://addons/RealmScene/scripts/RealmSmartObjects.gd"
+}, {
+"base": "Reference",
+"class": "SceneInstantiator",
+"language": "GDScript",
+"path": "res://addons/RealmObjects/SceneInstantiator.gd"
+}, {
+"base": "Spatial",
+"class": "SmartObject",
+"language": "GDScript",
+"path": "res://addons/RealmObjects/SmartObject.gd"
+} ]
+_global_script_class_icons={
+"LootSpawnArea": "",
+"MovingPlatform": "",
+"RealmBatcher": "",
+"RealmEnvironment": "",
+"RealmLights": "",
+"RealmMisc": "",
+"RealmNPCs": "",
+"RealmPortal": "",
+"RealmPortals": "",
+"RealmRespawnPoints": "",
+"RealmScene": "",
+"RealmSmartObjects": "",
+"SceneInstantiator": "",
+"SmartObject": "",
+}
+
+[application]
+
+config/name="Realm-template"
+run/main_scene="res://Realm.tscn"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/RealmObjects/plugin.cfg", "res://addons/RealmScene/plugin.cfg" )
+
+[physics]
+
+common/enable_pause_aware_picking=true
