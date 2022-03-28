@@ -23,6 +23,12 @@ func on_button_pressed(type):
 
 func get_parent_for_type(scene, type):
 	match type:
+		RealmPortal:
+			return scene.portals
+		LootSpawnArea:
+			return scene.smart_objects
+		MovingPlatform:
+			return scene.smart_objects
 			return scene.lights
 		_:
 			return scene.misc

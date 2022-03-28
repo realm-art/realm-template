@@ -8,6 +8,9 @@ var dock
 var selection
 
 func _enter_tree() -> void:
+	add_custom_type("RealmPortal", "Spatial", RealmPortal, icon)
+	add_custom_type("LootSpawnArea", "Spatial", LootSpawnArea, icon)
+	add_custom_type("MovingPlatform", "Spatial", MovingPlatform, icon)
 	#Init dock
 	dock = load(scene_path).instance()
 	add_control_to_dock(EditorPlugin.DOCK_SLOT_RIGHT_BL, dock)
@@ -17,8 +20,26 @@ func _enter_tree() -> void:
 	dock.selection = selection
 
 func _exit_tree():
+	remove_custom_type("RealmPortal")
+	remove_custom_type("LootSpawnArea")
+	remove_custom_type("MovingPlatform")
 	remove_control_from_docks(dock)
 	dock.free()
 
 func populate_dock():
+	dock.add_object(
+		"Realm Portal", 
+		"A portal that can be linked to any other Realm",
+		RealmPortal
+		)
+	dock.add_object(
+		"Loot Spawn Area", 
+		"An area in which items are allowed to spawn",
+		LootSpawnArea
+		)
+	dock.add_object(
+		"Moving Platform", 
+		"A platform that follows a path and can be interacted with using 3D buttons",
+		MovingPlatform
+		)
 	pass
