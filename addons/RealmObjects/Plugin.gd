@@ -66,7 +66,7 @@ func populate_dock():
 		)
 	dock.add_object(
 		"Candle", 
-		"A flickerling candle",
+		"A flickering candle",
 		Candle
 		)
 	dock.add_object(
