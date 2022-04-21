@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://smart_objects/door/scripts/DoorController.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.133333, 0.164706, 0.188235, 1 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.25, 4.5, 0.1 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 2, 0.25, 0.1 )
+
+[sub_resource type="CubeMesh" id=4]
+size = Vector3( 4, 8.5, 0.2 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="CylinderMesh" id=6]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.2
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 2, 4.25, 0.1 )
+
+[node name="Door" type="Spatial" groups=["Navmesh"]]
+script = ExtResource( 1 )
+
+[node name="Frame" type="StaticBody" parent="."]
+transform = Transform( 0.35, 0, 0, 0, 0.35, 0, 0, 0, 2.5, 0, 1.575, 0 )
+
+[node name="Mesh" type="CSGCombiner" parent="Frame"]
+material_override = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="Frame/Mesh"]
+width = 5.0
+height = 9.0
+depth = 0.2
+
+[node name="CSGBox2" type="CSGBox" parent="Frame/Mesh"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0 )
+operation = 2
+width = 4.0
+height = 8.5
+depth = 0.2
+
+[node name="CollisionShape" type="CollisionShape" parent="Frame"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Frame"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Frame"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.23651, 0 )
+shape = SubResource( 3 )
+
+[node name="Hinge" type="StaticBody" parent="."]
+transform = Transform( 0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -0.696, 1.494, 0 )
+
+[node name="Door" type="MeshInstance" parent="Hinge"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Knob" type="MeshInstance" parent="Hinge/Door"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.53102, -0.0614792, -0.113142 )
+material_override = SubResource( 5 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Hinge"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
+shape = SubResource( 7 )

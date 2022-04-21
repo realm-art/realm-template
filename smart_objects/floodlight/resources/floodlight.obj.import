@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/floodlight.obj-da9932ffbf1230dd513ff7688dcb737a.mesh"
+
+[deps]
+
+files=[ "res://.import/floodlight.obj-da9932ffbf1230dd513ff7688dcb737a.mesh" ]
+
+source_file="res://smart_objects/floodlight/resources/floodlight.obj"
+dest_files=[ "res://.import/floodlight.obj-da9932ffbf1230dd513ff7688dcb737a.mesh", "res://.import/floodlight.obj-da9932ffbf1230dd513ff7688dcb737a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
