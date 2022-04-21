@@ -1,0 +1,105 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/RealmTutorial/TutorialDock.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="Tutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 984.0
+margin_bottom = 162.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_right = 984.0
+margin_bottom = 14.0
+text = "Realm Godot Template"
+align = 1
+valign = 1
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 984.0
+margin_bottom = 22.0
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 26.0
+margin_right = 984.0
+margin_bottom = 57.0
+text = "Welcome to the Realm Godot template project. In order to start building, modify the \"Realm.tscn\" scene to your liking. Please note that only one Realm can be specified per project, and your Realm scene MUST be called \"Realm.tscn\" in the root directory of the project."
+autowrap = true
+
+[node name="HSeparator2" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+margin_top = 61.0
+margin_right = 984.0
+margin_bottom = 65.0
+
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 69.0
+margin_right = 984.0
+margin_bottom = 83.0
+text = "In order to add smart objects to your Realm, you can use the \"Smart Objects\" tab right next to this tutorial."
+autowrap = true
+
+[node name="HSeparator5" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+margin_top = 87.0
+margin_right = 984.0
+margin_bottom = 91.0
+
+[node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 95.0
+margin_right = 984.0
+margin_bottom = 109.0
+text = "More objects, assets and functionality may be added to this template as we update the repository."
+autowrap = true
+
+[node name="HSeparator3" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+margin_top = 113.0
+margin_right = 984.0
+margin_bottom = 117.0
+
+[node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 121.0
+margin_right = 984.0
+margin_bottom = 135.0
+text = "If you wish to add custom assets, please include all of them in the \"custom_assets\" folder. Creating sub-directories within that folder is no problem."
+autowrap = true
+
+[node name="HSeparator4" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+margin_top = 139.0
+margin_right = 984.0
+margin_bottom = 143.0
+
+[node name="Label4" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 147.0
+margin_right = 984.0
+margin_bottom = 162.0
+custom_styles/normal = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "For more detailed guidelines regarding asset formats, polycounts, light baking and more, please visit our [url=https://realm-3.gitbook.io/blender-godot-pipeline/hKcCIWP1RIZjlu4K0joj/]online documentation[/url]"
+text = "For more detailed guidelines regarding asset formats, polycounts, light baking and more, please visit our online documentation"
+fit_content_height = true
+scroll_active = false
+
+[connection signal="meta_clicked" from="ScrollContainer/VBoxContainer/Label4" to="." method="_on_meta_clicked"]
