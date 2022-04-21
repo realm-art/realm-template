@@ -30,6 +30,11 @@ _global_script_classes=[ {
 "path": "res://smart_objects/floodlight/scripts/FloodlightController.gd"
 }, {
 "base": "SmartObject",
+"class": "LightBulb",
+"language": "GDScript",
+"path": "res://smart_objects/light_bulb/scripts/LightBulbController.gd"
+}, {
+"base": "SmartObject",
 "class": "LootSpawnArea",
 "language": "GDScript",
 "path": "res://smart_objects/loot_spawn/scripts/LootSpawnArea.gd"

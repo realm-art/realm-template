@@ -15,6 +15,8 @@ func _enter_tree() -> void:
 	add_custom_type("Door", "Spatial", Door, icon)
 	add_custom_type("Candle", "Spatial", Candle, icon)
 	add_custom_type("FloodLight", "Spatial", FloodLight, icon)
+	add_custom_type("LightBulb", "Spatial", LightBulb, icon)
+	
 	#Init dock
 	dock = load(scene_path).instance()
 	add_control_to_dock(EditorPlugin.DOCK_SLOT_RIGHT_BL, dock)
@@ -31,6 +33,8 @@ func _exit_tree():
 	remove_custom_type("Door")
 	remove_custom_type("Candle")
 	remove_custom_type("FloodLight")
+	remove_custom_type("LightBulb")
+	
 	remove_control_from_docks(dock)
 	dock.free()
 
@@ -69,5 +73,10 @@ func populate_dock():
 		"Floodlight", 
 		"A floodlight. Can be turned on and off using 3D buttons.",
 		FloodLight
+		)
+	dock.add_object(
+		"Light Bulb", 
+		"A light bulb. Can be turned on and off using 3D buttons.",
+		LightBulb
 		)
 	pass
