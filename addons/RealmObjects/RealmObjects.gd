@@ -35,6 +35,8 @@ func get_parent_for_type(scene, type):
 			return scene.lights
 		Door:
 			return scene.smart_objects
+		FloodLight:
+			return scene.lights
 			return scene.lights
 		_:
 			return scene.misc
