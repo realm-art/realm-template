@@ -29,6 +29,15 @@ func get_parent_for_type(scene, type):
 			return scene.smart_objects
 		MovingPlatform:
 			return scene.smart_objects
+		Button3D:
+			return scene.smart_objects
+		Candle:
+			return scene.lights
+		Door:
+			return scene.smart_objects
+		FloodLight:
+			return scene.lights
+		LightBulb:
 			return scene.lights
 		_:
 			return scene.misc
