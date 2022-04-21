@@ -12,6 +12,7 @@ func _enter_tree() -> void:
 	add_custom_type("LootSpawnArea", "Spatial", LootSpawnArea, icon)
 	add_custom_type("MovingPlatform", "Spatial", MovingPlatform, icon)
 	add_custom_type("3DButton", "Spatial", Button3D, icon)
+	add_custom_type("Door", "Spatial", Door, icon)
 	add_custom_type("Candle", "Spatial", Candle, icon)
 	#Init dock
 	dock = load(scene_path).instance()
@@ -26,6 +27,7 @@ func _exit_tree():
 	remove_custom_type("LootSpawnArea")
 	remove_custom_type("MovingPlatform")
 	remove_custom_type("3DButton")
+	remove_custom_type("Door")
 	remove_custom_type("Candle")
 	remove_control_from_docks(dock)
 	dock.free()
@@ -50,6 +52,11 @@ func populate_dock():
 		"3D Button", 
 		"A button that can be connected to other smart objects",
 		Button3D
+		)
+	dock.add_object(
+		"Door", 
+		"A door. Can be interacted with using 3D buttons",
+		Door
 		)
 	dock.add_object(
 		"Candle", 

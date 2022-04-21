@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://smart_objects/candle/scripts/CandleController.gd"
 }, {
 "base": "SmartObject",
+"class": "Door",
+"language": "GDScript",
+"path": "res://smart_objects/door/scripts/DoorController.gd"
+}, {
+"base": "SmartObject",
 "class": "LootSpawnArea",
 "language": "GDScript",
 "path": "res://smart_objects/loot_spawn/scripts/LootSpawnArea.gd"
@@ -92,6 +97,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Button3D": "",
 "Candle": "",
+"Door": "",
 "LootSpawnArea": "",
 "MovingPlatform": "",
 "RealmBatcher": "",
