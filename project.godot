@@ -108,6 +108,8 @@ _global_script_class_icons={
 "Button3D": "",
 "Candle": "",
 "Door": "",
+"FloodLight": "",
+"LightBulb": "",
 "LootSpawnArea": "",
 "MovingPlatform": "",
 "RealmBatcher": "",
@@ -121,7 +123,7 @@ _global_script_class_icons={
 "RealmScene": "",
 "RealmSmartObjects": "",
 "SceneInstantiator": "",
-"SmartObject": "",
+"SmartObject": ""
 }
 
 [application]
