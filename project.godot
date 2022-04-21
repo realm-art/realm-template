@@ -131,9 +131,13 @@ _global_script_class_icons={
 config/name="Realm-template"
 run/main_scene="res://Realm.tscn"
 
+[autoload]
+
+Tutorial="*res://addons/RealmTutorial/Tutorial.gd"
+
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/RealmObjects/plugin.cfg", "res://addons/RealmScene/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/RealmObjects/plugin.cfg", "res://addons/RealmScene/plugin.cfg", "res://addons/RealmTutorial/plugin.cfg" )
 
 [physics]
 
