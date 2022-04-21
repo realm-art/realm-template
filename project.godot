@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "SmartObject",
+"class": "Button3D",
+"language": "GDScript",
+"path": "res://smart_objects/3d_button/scripts/ButtonController.gd"
+}, {
+"base": "SmartObject",
 "class": "LootSpawnArea",
 "language": "GDScript",
 "path": "res://smart_objects/loot_spawn/scripts/LootSpawnArea.gd"
@@ -80,6 +85,7 @@ _global_script_classes=[ {
 "path": "res://addons/RealmObjects/SmartObject.gd"
 } ]
 _global_script_class_icons={
+"Button3D": "",
 "LootSpawnArea": "",
 "MovingPlatform": "",
 "RealmBatcher": "",
