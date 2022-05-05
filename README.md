@@ -9,11 +9,16 @@ Modify to create custom Realm microverses for use in the Realm metaverse.
 #### Settting up Godot
 Download the latest stable Godot version for your platform from the [official Godot website](https://godotengine.org/download/). Godot does not need to be installed, but can be run immediately after unzipping the downloaded file.
 
-#### Cloning the repository
+#### Cloning/forking the repository
 
-Clone this repository by either using a git client or downloading the repo as a `.zip`. Press the green `Code` button at the top of the page to do so.
+You can clone this repository by either using a git client or downloading the repo as a `.zip`. Press the green `Code` button at the top of the page to do so.
+Alternatively, fork the repository first to create your own copy of it that you can modify and publish to github as you please. In order to do that, press the `Fork` button at the top of the page. 
 
-Once downloaded, open the Godot launcher and press `Import`, then navigate to the `project.godot` file of this repository. `Import&Edit` will then open the template within Godot.
+**Forks are the easiest way to share your creations with both Realm and the community.**
+
+For more information on how forking on GitHub works, take a look at the [official docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks).
+
+Once you have downloaded this repo or your fork, open the Godot launcher and press `Import`, then navigate to the `project.godot` file of the repository. `Import&Edit` will then open the template within Godot.
 
 #### Editing the template
 
